@@ -8,7 +8,6 @@ function MoviePlaylist() {
   // Yapılacaklar:
   // Filmlerin listesini al
   const moviePlaylist = [...list];
-
   // const handleMovieAdd = (movie) => {
   // Yapılacaklar:
   // Listeye film ekle
