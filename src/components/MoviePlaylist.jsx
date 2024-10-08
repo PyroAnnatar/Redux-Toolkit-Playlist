@@ -20,9 +20,12 @@ function MoviePlaylist() {
 
   const renderedMovies = moviePlaylist.map((movie) => {
     return (
-      <li key={movie}>
+      <li key={movie} className="flex justify-between">
         {movie}
-        <button onClick={() => dispatch(removeMovie(movie))} className="button">
+        <button
+          onClick={() => dispatch(removeMovie(movie))}
+          className="py-1 px-3 rounded text-white bg-red-600 hover:bg-red-500/80"
+        >
           X
         </button>
       </li>
@@ -30,19 +33,19 @@ function MoviePlaylist() {
   });
 
   return (
-    <div className="content">
+    <div className="bg-white shadow-[0_0_12px_rgba(0,0,0,0.6)] p-4 rounded-md w-2/3 border-gray-400 border-2">
       <div className="table-header">
-        <h3 className="subtitle">Film Listesi</h3>
-        <div className="buttons">
-          <button
-            onClick={() => dispatch(addMovie(createRandomMovie()))}
-            className="button"
-          >
-            + Listeye Film Ekle
-          </button>
-        </div>
+        <h3 className="text-xl text-center font-bold">Film Listesi</h3>
       </div>
-      <ul>{renderedMovies}</ul>
+      <ul className="flex flex-col gap-2  mt-4">{renderedMovies}</ul>
+      <div className="flex justify-center my-2">
+        <button
+          onClick={() => dispatch(addMovie(createRandomMovie()))}
+          className="py-1 px-3 rounded text-white bg-blue-600 hover:bg-blue-500/80"
+        >
+          + Listeye Film Ekle
+        </button>
+      </div>
     </div>
   );
 }

@@ -21,9 +21,12 @@ function SongPlaylist() {
 
   const renderedSongs = songPlaylist.map((song) => {
     return (
-      <li key={song}>
+      <li key={song} className="flex justify-between">
         {song}
-        <button onClick={() => dispatch(removeSong(song))} className="button">
+        <button
+          onClick={() => dispatch(removeSong(song))}
+          className="py-1 px-3 rounded text-white bg-red-600 hover:bg-red-500/80"
+        >
           X
         </button>
       </li>
@@ -31,19 +34,19 @@ function SongPlaylist() {
   });
 
   return (
-    <div className="content">
+    <div className="bg-white shadow-[0_0_12px_rgba(0,0,0,0.6)] p-4 rounded-md w-2/3 border-gray-400 border-2">
       <div className="table-header">
-        <h3 className="subtitle">Şarkı Listesi</h3>
-        <div className="buttons">
-          <button
-            onClick={() => dispatch(addSong(createRandomSong()))}
-            className="button"
-          >
-            + Listeye Şarkı Ekle
-          </button>
-        </div>
+        <h3 className="text-xl text-center font-bold">Şarkı Listesi</h3>
       </div>
-      <ul>{renderedSongs}</ul>
+      <ul className="flex flex-col gap-2 mt-4">{renderedSongs}</ul>
+      <div className="flex justify-center my-2">
+        <button
+          onClick={() => dispatch(addSong(createRandomSong()))}
+          className="py-1 px-3 rounded text-white bg-blue-600 hover:bg-blue-500/80"
+        >
+          + Listeye Şarkı Ekle
+        </button>
+      </div>
     </div>
   );
 }

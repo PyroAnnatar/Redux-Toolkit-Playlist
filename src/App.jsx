@@ -12,8 +12,11 @@ export default function App() {
   };
 
   return (
-    <div className="container">
-      <button onClick={handleResetClick} className="button">
+    <div className="h-screen overflow-auto p-10 bg-gradient-to-bl from-[#cea5a5] via-[#420] to-[#070707] flex flex-col items-center gap-4">
+      <button
+        onClick={handleResetClick}
+        className="py-1 px-3 rounded text-white bg-red-600 hover:bg-red-500/80 self-center"
+      >
         Listeleri Sil
       </button>
       <hr />
